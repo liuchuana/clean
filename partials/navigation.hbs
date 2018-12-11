@@ -1,0 +1,21 @@
+<div class="navigation-toggle-container" id="toggle">
+  <div class="navigation-toggle">
+    <div class="toggle-icon">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+    </div>
+  </div>
+</div>
+
+<div class="site-navigation-overlay" id="overlay">
+  <nav class="site-navigation">
+    <ul>
+      {{#foreach navigation}}
+        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+          <a href="{{url absolute="true"}}">{{label}}</a>
+        </li>
+      {{/foreach}}
+    </ul>
+  </nav>
+</div>

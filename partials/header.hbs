@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="float-left">
+    {{#is "post, page"}}
+    <h1 class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+      {{!-- <span class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></span> --}}
+    {{else}}
+      <h1 class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+    {{/is}}
+  </div>
+
+  <div class="float-right">
+    {{navigation}}
+  </div>
+</header>
