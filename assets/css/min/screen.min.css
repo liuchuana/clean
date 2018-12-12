@@ -1762,3 +1762,36 @@ h6:hover a {
 .kg-gallery-image:not(:first-of-type) {
   margin: 0 0 0 0.75em;
 }
+#archives .tags  {
+  overflow: hidden;
+}
+#archives .tags li{
+  cursor: pointer;
+  float: left;
+  margin-right: 2rem;
+  list-style: none;
+  font-weight: 600;
+}
+#archives .tags li.active {
+  color: #0081ef;
+}
+#archives .tags li.active span{ 
+  color: #0081ef;
+}
+#archives .tags li span{ 
+  display: inline-block;
+  font-size: 0.75rem; 
+  color: #66727d;
+  line-height: 1;
+  padding-top: 0.3rem;
+  vertical-align: top;
+}
+#archives .article-list {
+  list-style: none;
+}
+#archives .year {
+  font-size: 2.5rem;
+}
+#archives .article-list .item_time {
+  font-size: 1.2rem;
+}

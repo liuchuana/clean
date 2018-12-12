@@ -1,0 +1,68 @@
+{{!< default}} <main id="archives" class="site-main wow fadeIn" data-wow-duration=".8s" role="main">
+  <ul class="tags">
+    {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+    {{#get "posts"}}
+    <li onclick="toggleTag()">
+      show all
+      <span>{{meta.pagination.total}}</span>
+    </li>
+    {{/get}}
+    {{#foreach tags}}
+    {{#if count.posts}}
+    <li onclick="toggleTag('{{slug}}')">
+      {{name}}
+      <span>{{count.posts}}</span>
+    </li>
+    {{/if}}
+    {{/foreach}}
+    {{/get}}
+  </ul>
+  <ul class="article-list">
+  </ul>
+  </main>
+  <script>
+    $.get(ghost.url.api('posts'), {
+      limit: 'all',
+      order: 'published_at desc'
+    }).done(function (data) {
+      var posts = data.posts;
+      drawPosts(posts)
+    }).fail(function (err) {
+      console.log(err);
+    });
+    function toggleTag(slug) {
+      filter = slug ? 'tag:' + slug : '';
+      var postData = slug ? { filter: 'tag:' + slug, limit: 'all' } : { limit: 'all' };
+      $.get(ghost.url.api('posts'), postData).done(function (data) {
+         var posts = data.posts;
+        drawPosts(posts)
+      }).fail(function (err) {
+        console.log(err);
+      });
+    }
+    function drawPosts(posts){
+      var pr_year = 0;
+      var str = '';
+      for (var i = 0; i < posts.length; i++) {
+        let item = posts[i];
+        let time = item.published_at;
+        let now_year = new Date(time).getFullYear();
+        let now_month = new Date(time).getMonth() + 1;
+        let now_date = new Date(time).getDate();
+        if (now_year != pr_year) {
+          pr_year = now_year;
+          str += '<li class="year">' + now_year + '</li>'
+          str += '<li class="item">'
+          str += '  <span class="item_time">' + now_month + '月' + now_date + '日</span>'
+          str += '  <a class="item_title" href="' + item.url + '">' + item.title + '</a>'
+          str += '</li>'
+        } else {
+          str += '<li class="item">'
+          str += '  <span class="item_time">' + now_month + '月' + now_date + '日</span>'
+          str += '  <a class="item_title" href="' + item.url + '">' + item.title + '</a>'
+          str += '</li>'
+        }
+        $('.article-list').html(str)
+      }
+    }
+  </script>
