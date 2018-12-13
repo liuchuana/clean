@@ -1,5 +1,5 @@
 
-[![starter version](https://img.shields.io/badge/release-v1.1.0-blue.svg)](https://github.com/caviare/starter/releases)
+[![starter version](https://img.shields.io/badge/release-v1.0-blue.svg)](https://github.com/caviare/starter/releases)
 [![ghost version](https://img.shields.io/badge/ghost-v2.8-brightgreen.svg)](https://github.com/TryGhost/Ghost/releases)
 
 # starter
