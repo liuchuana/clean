@@ -65,26 +65,9 @@
 
   {{#is "post"}}
     <script type="text/javascript">
-      if ( typeof disqus_shortname !== 'undefined' ) {
-        /* --- Don't edit below this line --- */
-        (function() {
-          /* --- var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); --- */
-
-          const gitalk = new Gitalk({
-            clientID: 'e07a6dd608196f9ad95d',
-            clientSecret: '42506d0d433934a81c2b5671d5b7d7f262fe6cbb',
-            repo: 'caviare',
-            owner: 'caviare',
-            admin: ['caviare'],
-            id: location.pathname,      // Ensure uniqueness and length less than 50
-            distractionFreeMode: false  // Facebook-like distraction free mode
-          })
-          gitalk.render('gitalk-container')
-        })();
-      } else {
-        $(".post-comments").remove();
+      if (gitalkConfig) {
+        var gitalk = new Gitalk(gittalkConfig)
+        gitalk.render('gitalk-container')
       }
     </script>
   {{/is}}
