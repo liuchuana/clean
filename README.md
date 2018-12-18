@@ -1,39 +1,22 @@
-[![starter version](https://img.shields.io/badge/release-v1.1.2-blue.svg)](https://github.com/quangtt/starter/releases)
-[![ghost version](https://img.shields.io/badge/ghost-v2.1-brightgreen.svg)](https://github.com/TryGhost/Ghost/releases)
+
+[![starter version](https://img.shields.io/badge/release-v1.0-blue.svg)](https://github.com/caviare/starter/releases)
+[![ghost version](https://img.shields.io/badge/ghost-v2.8-brightgreen.svg)](https://github.com/TryGhost/Ghost/releases)
 
 # starter
-A minimal, clean, modern theme for Ghost blog.
 
-*Special Thanks to [byfortress](http://byfortress.com/downloads/starter). His theme can be download for free but you can buy him a beer [here](https://creativemarket.com/lucas_delrio/1069273-Starter-Free-Ghost-Theme). Actually I bought it before he switched it to free =]]*
+Ghost博客现代主题。
 
-## Features
+特别感谢 [byfortress](http://byfortress.com/downloads/starter)，这个主题是基于它做的修改，他的主题可以免费下载。
 
-- Compatible with Ghost >= 2.0
-- Fully responsive
-- Retina ready
-- Google Fonts
-- Multiple author support
-- Disqus comments
-- Featured posts
-- Google Analytics
-- Code syntax highlight with Prism
+## 功能
+- gitalk评论
+- 增加归档页面
+- 标签筛选文章
 
-Some texts in theme are in Vietnamese. You can change it later :)
+## demo
 
-## Configuration
+你可以在我的[博客](http://www.imcaviare.com)看到它。
 
-Make sure you modify all my personal stuff, such as:
+![](https://ww1.sinaimg.cn/large/005M2kKhly1fy4v6idun0j318g0tjdst.jpg)
 
-- Disqus shortname (`index.js`)
-- Google Analytics (`default.hbs`)
-
-Please refer to [Wiki](https://github.com/quangtt/starter/wiki) for more details.
-
-## Preview
-You can see it live on my [blog](https://quangteomedia.com).
-
-![Desktop view](https://i.imgur.com/vEZYfcm.jpg)
-
-![Single post](https://i.imgur.com/bYS1wpJ.jpg)
-
-![Mobile view](https://i.imgur.com/yOnKMbQ.jpg)
+![](https://ww1.sinaimg.cn/large/005M2kKhly1fy4v7agyghj318g0tn79h.jpg)
