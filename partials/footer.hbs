@@ -3,12 +3,7 @@
     &copy; <a href="{{@blog.url}}">{{@blog.title}}</a> {{date format="YYYY"}}
       &nbsp;|&nbsp;
       <div class="footer-navigation">
-           {{#if @labs.subscribers}}
-                      <a class="subscribe" href="{{@blog.url}}/subscribe/">Subscribe</a>
-                  {{else}}
-                      <a class="subscribe" href="{{@blog.url}}/rss/" target="_blank">RSS</a>
-                  {{/if}}
-              {{!-- <a href="{{@blog.url}}/about-quang-teo">关于作者</a> --}}
+        <a class="subscribe" href="{{@blog.url}}/rss/" target="_blank">RSS</a>
       </div>
       <div class="description">Powered by <a href="https://ghost.org">ghost</a> & <a href="https://github.com/caviare/starter">starter</a></div>
   </div>
