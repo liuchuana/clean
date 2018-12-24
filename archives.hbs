@@ -2,14 +2,14 @@
   <ul class="tags">
     {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
     {{#get "posts"}}
-    <li onclick="toggleTag()">
+    <li onclick="toggleTag(this)">
       show all
       <span>{{meta.pagination.total}}</span>
     </li>
     {{/get}}
     {{#foreach tags}}
     {{#if count.posts}}
-    <li onclick="toggleTag('{{slug}}')">
+    <li onclick="toggleTag(this,'{{slug}}')">
       {{name}}
       <span>{{count.posts}}</span>
     </li>
@@ -21,6 +21,7 @@
   </ul>
   </main>
   <script>
+    $('#archives .tags li').eq(0).addClass('active');
     $.get(ghost.url.api('posts'), {
       limit: 'all',
       order: 'published_at desc'
@@ -30,7 +31,9 @@
     }).fail(function (err) {
       console.log(err);
     });
-    function toggleTag(slug) {
+    function toggleTag($this,slug) {
+      $('#archives .tags li').removeClass('active');
+      $($this).addClass('active');
       filter = slug ? 'tag:' + slug : '';
       var postData = slug ? { filter: 'tag:' + slug, limit: 'all' } : { limit: 'all' };
       $.get(ghost.url.api('posts'), postData).done(function (data) {
