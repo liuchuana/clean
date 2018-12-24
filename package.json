@@ -9,15 +9,6 @@
   "config": {
     "posts_per_page": 8
   },
-  "devDependencies": {
-    "del": "^0.1.1",
-    "gulp": "^3.8.6",
-    "gulp-concat": "^2.3.4",
-    "gulp-minify-css": "^0.3.7",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^0.3.1",
-    "streamqueue": "^0.1.1"
-  },
   "keywords": [
     "ghost",
     "theme",
