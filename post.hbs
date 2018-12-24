@@ -9,6 +9,7 @@
     <article class="{{post_class}}">
       <header class="post-header">
         <h1>{{title}}</h1>
+        {{#is "post"}}
         <div class="post-meta">
           <time datetime="{{date format='YYYY-MM-DD'}}"><b>生成时间: </b> {{date format="YYYY-MM-DD H:mm"}}</time>
           <div class="tags">
@@ -17,6 +18,7 @@
             {{/foreach}}
           </div>
         </div>
+        {{/is}}
       </header>
 
       <section class="post-content">
