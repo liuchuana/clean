@@ -1,29 +1,78 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
-
-{{! The main content area on the homepage }}
-<main class="site-main wow fadeIn" data-wow-duration=".8s" role="main">
-
-  {{! Everything inside the #tag tags pulls data from the tag }}
-  {{#tag}}
-
-    <section class="site-hero {{#if feature_image}}" style="background-image: url({{img_url feature_image}}){{else}}site-hero-no-cover{{/if}}">
-      <header class="site-hero-header">
-        <h2 class="site-hero-title">{{name}}</h2>
-        <p class="site-hero-description">
-          {{#if description}}
-            {{description}}
-          {{else}}
-            {{../pagination.total}} 篇文章
-          {{/if}}
-        </p>
-      </header>
-      <div class="overlay"></div>
-    </section>
-
-  {{/tag}}
-
-  {{! The tag below includes the post loop - partials/loop-alt.hbs }}
-  {{> "loop"}}
-
+<main id="archives" class="site-main wow fadeIn" data-wow-duration=".8s" role="main">
+  <ul class="tags">
+    {{#get "posts" limit="all" include="count"  }}
+    <li class="_all">
+      <a href="/tag" style="color: #283037;">
+        show all
+        <span>{{posts.length}}</span>
+      </a>
+    </li>
+    {{/get}}
+    {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+    {{#foreach tags}}
+    {{#if count.posts}}
+    <li class="{{slug}}">
+      <a href="/tag/{{slug}}" style="color: #283037;">
+        {{name}}
+        <span>{{count.posts}}</span>
+      </a>
+    </li>
+    {{/if}}
+    {{/foreach}}
+    {{/get}}
+  </ul>
+  <ul class="article-list" style="display: none;">
+    {{!-- 显示当前标签 --}}
+    {{#if tag}}
+    {{#foreach posts }}
+    <li class="year">{{date format='YYYY'}}</li>
+    <li class="item">
+      <span class="item_time">{{date format='MM'}}月{{date format='DD'}}日</span>
+      <a class="item_title" href="{{url}}">{{title}}</a>
+    </li>
+    {{/foreach}}
+    {{/if}}
+    {{!-- 显示全部 --}}
+    {{#unless tag}}
+    {{#get "posts"}}
+    {{#foreach posts limit="all" include="count.posts" order="count.posts desc" }}
+    <li class="year">{{date format='YYYY'}}</li>
+    <li class="item">
+      <span class="item_time">{{date format='MM'}}月{{date format='DD'}}日</span>
+      <a class="item_title" href="{{url}}">{{title}}</a>
+    </li>
+    {{/foreach}}
+    {{/get}}
+    {{/unless}}
+  </ul>
 </main>
+<script>
+  let years = $(".article-list .year");
+  var pr_year = 0;
+  for (var i = 0; i < years.length; i++) {
+    var now_year = $(years[i]).html();
+    if (now_year != pr_year) {
+      pr_year = now_year;
+    } else {
+      $(years[i]).remove()
+    }
+  }
+  $(".article-list").show()
+
+
+  function getTag() {
+    let urlArr = window.location.pathname.split("/");
+    if (urlArr.length > 3) {
+      return urlArr[2]
+    } else {
+      return false
+    }
+  }
+  var tag = getTag();
+  if (tag) {
+    $("." + tag).addClass("active")
+  } else {
+    $("._all").addClass("active")
+  }
+</script>
