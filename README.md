@@ -5,7 +5,6 @@
 ## clean
 clean是一个简洁清新的ghost博客现代主题，你可以在我的[博客](https://www.imcaviare.com)看到它。
 
-
 ### 功能简介
 ---
 - gitalk评论
@@ -41,7 +40,7 @@ clean是一个简洁清新的ghost博客现代主题，你可以在我的[博客
 ---
 - 在ghost后台增加页面
 
-![](https://ww1.sinaimg.cn/large/005M2kKhly1gdkz58j4qfj33rs1oik0h.jpg)
+![](http://ww1.sinaimg.cn/large/005M2kKhly1gdl5s093nbj33rs1oik0h.jpg)
 
 - 如果要使用gitalk，在页面底部加入以下代码
 ```javascript
@@ -55,11 +54,11 @@ clean是一个简洁清新的ghost博客现代主题，你可以在我的[博客
     </script>
 ```
 
-![](https://ww1.sinaimg.cn/large/005M2kKhly1gdkzbamhkgj33wo1scwy1.jpg)
+![](http://ww1.sinaimg.cn/large/005M2kKhly1gdl5s0hilsj33wo1scwy1.jpg)
 
 - 在page设置中设置页面路由
 
-![](https://ww1.sinaimg.cn/large/005M2kKhly1gdkz1z6bw9j33vi1naax9.jpg)
+![](http://ww1.sinaimg.cn/large/005M2kKhly1gdl5s0twahj33vi1naax9.jpg)
 
 - 在ghost导航设置中加上我们增加的页面
 
