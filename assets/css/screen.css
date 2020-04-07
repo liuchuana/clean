@@ -1775,6 +1775,9 @@ h6:hover a {
 #archives .tags li.active {
   color: #0081ef;
 }
+#archives .tags li.active a {
+  color: #0081ef;
+}
 #archives .tags li.active span{ 
   color: #0081ef;
 }
