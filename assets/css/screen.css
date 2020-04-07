@@ -1778,7 +1778,7 @@ h6:hover a {
 #tag .article-list {
   list-style: none;
 }
-#tag .year {
+#tag .article-list  .year {
   font-size: 2.5rem;
 }
 #tag .article-list .item_time {
