@@ -4,10 +4,6 @@
 
 # starter
 
-Ghost博客现代主题。
-
-特别感谢 [byfortress](http://byfortress.com/downloads/starter)，这个主题是基于它做的修改，他的主题可以免费下载。
-
 ## 增加功能
 - gitalk评论
 - 增加归档页面
@@ -27,7 +23,7 @@ Ghost博客现代主题。
 1. 在ghost后台的`Labs`中下载路由路由配置文件。
 ![](http://ww1.sinaimg.cn/large/005M2kKhly1fyhp56k8ujj319x0nhgmr.jpg)
 
-2. 修改路由配置。我的归档页面路由是`https://www.imcaviare.com/archives/`写法如下：
+2. 修改路由配置。我的归档页面路由是`https://www.imcaviare.com/tag/`写法如下：
 ![](http://ww1.sinaimg.cn/large/005M2kKhly1fyhp862e1bj30840770sn.jpg)
 
 3. 上传配置
