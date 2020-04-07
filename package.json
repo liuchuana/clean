@@ -6,6 +6,9 @@
     "email": "hello@byfortress.com",
     "url": "https://byfortress.com"
   },
+  "engines": {
+    "ghost-api": "v3"
+  },
   "config": {
     "posts_per_page": 8
   },
