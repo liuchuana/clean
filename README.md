@@ -1,40 +1,50 @@
 
-[![starter version](https://img.shields.io/badge/release-v1.0-blue.svg)](https://github.com/caviare/starter/releases)
-[![ghost version](https://img.shields.io/badge/ghost-v2.8-brightgreen.svg)](https://github.com/TryGhost/Ghost/releases)
+[![clean version](https://img.shields.io/badge/release-v1.1-blue.svg)](https://github.com/caviare/clean/releases)
+[![ghost version](https://img.shields.io/badge/ghost-v3.12.1-brightgreen.svg)](https://github.com/TryGhost/Ghost/releases)
 
-# starter
+## clean
+---
+clean是一个简洁清新的ghost博客现代主题，你可以在我的[博客](https://www.imcaviare.com)看到它。
 
-## 增加功能
+
+### 功能简介
+---
 - gitalk评论
 - 增加归档页面
 - 标签筛选文章
+- 兼容ghosV3版本
+- 兼容移动端
 
 ### gitalk评论正确食用方法
+---
 
-在后台中博客页面顶部声明gitalk配置，以下是我的gitalk配置示例：
+在后台中博客页面顶部声明[gitalk](https://github.com/gitalk/gitalk)配置，以下是我的[gitalk](https://github.com/gitalk/gitalk)配置示例：
 
-![](http://ww1.sinaimg.cn/large/005M2kKhly1fyhorkdprtj317t0m7dgz.jpg)
+![](https://ww1.sinaimg.cn/large/005M2kKhly1gdkyyz2uxhj33n01la4e3.jpg)
 
-### 增加归档页面路由
+### 关于增加留言页面与关于我的页面
+---
+在ghost后台增加页面
 
-> ghost在部署完成后默认是没有归档页面的路由的但是在主题中已经写好了这个页面。所以我们需要正确的配置好路由就可以在博客中显示归档页面。
+![](https://ww1.sinaimg.cn/large/005M2kKhly1gdkz58j4qfj33rs1oik0h.jpg)
 
+如果要使用gitalk，在页面底部加入以下代码
+```javascript
+    <script type="text/javascript">
+        window.onload=function(){
+            if (gitalkConfig) {
+                var gitalk = new Gitalk(gitalkConfig)
+                gitalk.render('gitalk-container')
+            }  
+        }
+    </script>
+```
 
-1. 在ghost后台的`Labs`中下载路由路由配置文件。
-![](http://ww1.sinaimg.cn/large/005M2kKhly1fyhp56k8ujj319x0nhgmr.jpg)
+![](https://ww1.sinaimg.cn/large/005M2kKhly1gdkzbamhkgj33wo1scwy1.jpg)
 
-2. 修改路由配置。我的归档页面路由是`https://www.imcaviare.com/tag/`写法如下：
-![](http://ww1.sinaimg.cn/large/005M2kKhly1fyhp862e1bj30840770sn.jpg)
+在page设置中设置页面路由
 
-3. 上传配置
-![](http://ww1.sinaimg.cn/large/005M2kKhly1fyhpbzhqi5j31de0ix756.jpg)
+![](https://ww1.sinaimg.cn/large/005M2kKhly1gdkz1z6bw9j33vi1naax9.jpg)
 
-4. 记得加上你的导航
-![](http://ww1.sinaimg.cn/large/005M2kKhly1fyhpds4ce9j30yl0b2t8v.jpg)
-## demo
-
-你可以在我的[博客](http://www.imcaviare.com)看到它。
-
-![](https://ww1.sinaimg.cn/large/005M2kKhly1fy4v6idun0j318g0tjdst.jpg)
-
-![](https://ww1.sinaimg.cn/large/005M2kKhly1fy4v7agyghj318g0tn79h.jpg)
+在ghost导航设置中加上我们增加的页面
+![](http://ww1.sinaimg.cn/large/005M2kKhly1gdkze8e18wj33xg1nc4qq.jpg)
