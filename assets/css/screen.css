@@ -1762,41 +1762,44 @@ h6:hover a {
 .kg-gallery-image:not(:first-of-type) {
   margin: 0 0 0 0.75em;
 }
-#archives .tags  {
+#tag .tags  {
   overflow: hidden;
 }
-#archives .tags li{
+#tag .tags li{
   cursor: pointer;
   float: left;
   margin-right: 2rem;
   list-style: none;
   font-weight: 600;
 }
-#archives .tags li.active {
+#tag .tags li.active {
   color: #0081ef;
 }
-#archives .tags li.active a {
+#tag .article-list {
+  list-style: none;
+}
+#tag .year {
+  font-size: 2.5rem;
+}
+#tag .article-list .item_time {
+  font-size: 1.2rem;
+}
+#tag .tags li a {
+  color: #283037;
+}
+#tag .tags li.active a {
   color: #0081ef;
 }
-#archives .tags li.active span{ 
+#tag .tags li.active span{ 
   color: #0081ef;
 }
-#archives .tags li span{ 
+#tag .tags li span{ 
   display: inline-block;
   font-size: 0.75rem; 
   color: #66727d;
   line-height: 1;
   padding-top: 0.3rem;
   vertical-align: top;
-}
-#archives .article-list {
-  list-style: none;
-}
-#archives .year {
-  font-size: 2.5rem;
-}
-#archives .article-list .item_time {
-  font-size: 1.2rem;
 }
 
 .kg-bookmark-card {

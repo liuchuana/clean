@@ -1,9 +1,9 @@
 {{!< default}}
-<main id="archives" class="site-main wow fadeIn" data-wow-duration=".8s" role="main">
+<main id="tag" class="site-main wow fadeIn" data-wow-duration=".8s" role="main">
   <ul class="tags">
     {{#get "posts" limit="all" include="count"  }}
     <li class="_all">
-      <a href="/tag" style="color: #283037;">
+      <a href="/tag">
         show all
         <span>{{posts.length}}</span>
       </a>
@@ -13,7 +13,7 @@
     {{#foreach tags}}
     {{#if count.posts}}
     <li class="{{slug}}">
-      <a href="/tag/{{slug}}" style="color: #283037;">
+      <a href="/tag/{{slug}}" >
         {{name}}
         <span>{{count.posts}}</span>
       </a>
