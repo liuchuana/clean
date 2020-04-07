@@ -3,7 +3,6 @@
 [![ghost version](https://img.shields.io/badge/ghost-v3.12.1-brightgreen.svg)](https://github.com/TryGhost/Ghost/releases)
 
 ## clean
----
 clean是一个简洁清新的ghost博客现代主题，你可以在我的[博客](https://www.imcaviare.com)看到它。
 
 
