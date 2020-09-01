@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   {{! Document Settings }}
   <meta charset="utf-8" />
@@ -22,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css?family=Athiti&amp;subset=vietnamese" rel="stylesheet">
 
   {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript" src="{{asset "js/jquery-1.12.0.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/pace.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/wow.js"}}"></script>
@@ -30,12 +31,16 @@
   <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
   {{! The main JavaScript file for Blacklist }}
   {{!-- gitalk --}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{asset "css/gitalk.css"}}" />
+  <script type="text/javascript" src="{{asset "js/gitalk.js"}}"></script>
 
   {{! Ghost outputs important style and meta data with this tag }}
+  <script>
+    var gitalkConfig = null
+  </script>
   {{ghost_head}}
 </head>
+
 <body class="{{body_class}}">
 
   <div class="container">
@@ -53,24 +58,25 @@
   {{ghost_foot}}
 
   <script>
-      var images = document.querySelectorAll('.kg-gallery-image img');
-      images.forEach(function (image) {
-          var container = image.closest('.kg-gallery-image');
-          var width = image.attributes.width.value;
-          var height = image.attributes.height.value;
-          var ratio = width / height;
-          container.style.flex = ratio + ' 1 0%';
-      })
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+      var container = image.closest('.kg-gallery-image');
+      var width = image.attributes.width.value;
+      var height = image.attributes.height.value;
+      var ratio = width / height;
+      container.style.flex = ratio + ' 1 0%';
+    })
   </script>
 
   {{#is "post"}}
-    <script type="text/javascript">
-      if (gitalkConfig) {
-        var gitalk = new Gitalk(gitalkConfig)
-        gitalk.render('gitalk-container')
-      }
-    </script>
+  <script type="text/javascript">
+    if (gitalkConfig) {
+      var gitalk = new Gitalk(gitalkConfig)
+      gitalk.render('gitalk-container')
+    }
+  </script>
   {{/is}}
 
 </body>
+
 </html>
