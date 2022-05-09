@@ -3,6 +3,11 @@
 
 ## clean
 
+特别感谢[ byfortress ](http://byfortress.com/downloads/starter) ，~~这个主题是基于它做的修改，他的主题可以免费下载。~~ (他停止维护了他的主题)
+
+
+
+
 clean 是一个简洁清新的 ghost 博客现代主题，你可以在我的[博客](https://www.imcaviare.com)看到它。
 
 ![](https://ww1.sinaimg.cn/large/005M2kKhly1fy4v6idun0j318g0tjdst.jpg)
